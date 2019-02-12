@@ -1,0 +1,1134 @@
+{
+  "count": 43,
+  "query": {
+    "created_at": {
+      "$gte": "Thu, 01 Mar 2018 00:00:00 GMT",
+      "$lte": "Sat, 10 Mar 2018 23:59:59 GMT"
+    }
+  },
+  "results": [
+    {
+      "_id": {
+        "$oid": "5a983780e828f1as3115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "DFW3",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180302-07151",
+      "ticket_source": "core"
+    },
+
+    {
+      "_id": {
+        "$oid": "5a983780e828f13115c340f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "DFW3",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180302-07151",
+      "ticket_source": "core"
+    },
+
+
+    {
+      "_id": {
+        "$oid": "5a983780e828f133115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "DFW3",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180302-07151",
+      "ticket_source": "core"
+    },
+
+
+
+    {
+      "_id": {
+        "$oid": "5a983780e828f3313115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "DFW2",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-17151",
+      "ticket_source": "core"
+    },
+
+
+
+
+    {
+      "_id": {
+        "$oid": "5a983780e828f3333131152c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "DFW1",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07152",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780e828f13s115c43330f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "HKG1",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07153",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a9s83733380e828f13115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "IAD2",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07154",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780e332333828f131d15c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "IAD3",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07155",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983ss780e828f13115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "LON1",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07156",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780e828f131155c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "LON3",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07157",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780es828f13115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "LON5",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07158",
+      "ticket_source": "core"
+    },
+
+    {
+      "_id": {
+        "$oid": "5a9a83780e828f13115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "ORD1",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07160",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780e828f13115c4f0f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "SYD2",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07161",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780esf828f13115c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "FRA1",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07162",
+      "ticket_source": "core"
+    },
+    {
+      "_id": {
+        "$oid": "5a983780esf828f131asdfs15c40f93"
+      },
+      "account_lead_tech": "kevi6607",
+      "account_lead_tech_email": "kevin.kessler@RACKSPACE.COM",
+      "account_lead_tech_name": "Kevin Kessler",
+      "account_manager": "eric.babcock",
+      "account_manager_email": "eric.babcock@rackspace.com",
+      "account_manager_name": "Eric Babcock",
+      "account_name": "Next Connexions, LLC",
+      "account_number": "954394",
+      "account_segment": "ENT East",
+      "account_service_level": "Managed",
+      "additional_info": "\n<small><strong>03-01-2018 @ 17:31 UTC by Jeremy Cantu:</strong></small> Console access was unresponsive.\r\nDevice was rebooted and came back up operational after code upgrade failure.  ",
+      "am_supervisor_email": "sara.odonnal@RACKSPACE.COM",
+      "created_at": {
+        "$date": 1519925119641
+      },
+      "created_by": "jere4140",
+      "created_by_email": "jeremy.cantu@rackspace.com",
+      "created_by_name": "Jeremy Cantu",
+      "customer_caused": false,
+      "data_center": "FRA1",
+      "departments": [
+        "NetSec"
+      ],
+      "devices": [
+        {
+          "device_id": "414629",
+          "device_link": "https://core.rackspace.com/py/core/#/device/414629",
+          "device_name": "414629-fw7.walmart.com",
+          "device_status": "Online/Complete"
+        }
+      ],
+      "end_date": {
+        "$date": 1519924800000
+      },
+      "escalated": false,
+      "last_email": {
+        "$date": 1519925481314
+      },
+      "log": [
+        "Outage created by Jeremy Cantu at 03-01-2018 @ 17:25 UTC",
+        "Outage updated by Jeremy Cantu at 03-01-2018 @ 17:31 UTC"
+      ],
+      "outage_cause": "Hardware Failure",
+      "outage_impact": "Outage",
+      "outage_status": "completed",
+      "outage_type": "Hardware",
+      "rackspace_caused": false,
+      "segment": "support",
+      "short_description": "ASA appears to have been in a boot loop.  Reboot seems to have resolved the issue.",
+      "start_date": {
+        "$date": 1519921500000
+      },
+      "status": "closed",
+      "subscriptions": [
+        "Brentton.Case@rackspace.com"
+      ],
+      "support_team": "ENTE-8WIN",
+      "tech_event_mgr": null,
+      "tech_event_mgr_email": null,
+      "tech_event_mgr_name": null,
+      "tech_expert": null,
+      "tech_expert_email": null,
+      "tech_expert_name": null,
+      "tech_major_mgr": null,
+      "tech_major_mgr_email": null,
+      "tech_major_mgr_name": null,
+      "temperature": "Green",
+      "ticket_number": "180301-07162",
+      "ticket_source": "core"
+    }
+  ]
+}
+
+
