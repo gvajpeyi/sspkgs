@@ -4,3 +4,4 @@ metricsdb/tests/testdata.json
 metricsdb/models/hitch_test.go
 network/**
 coreods/.idea/**
+.idea
