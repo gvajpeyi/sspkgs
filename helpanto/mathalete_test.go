@@ -8,6 +8,6 @@ func ExamplePercentageDiff() {
 	febSales := 590.00
 
 	febDiff := PercentageDiff(janSales, febSales)
-	fmt.Println(febDiff)
+
 	// Output: 21.333333333333336
-	}
+}

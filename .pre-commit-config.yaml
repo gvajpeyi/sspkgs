@@ -4,4 +4,4 @@
   - id: go-fmt
   - id: validate-toml
   - id: go-critic
-  - id: go-unit-tests
+#  - id: go-unit-tests

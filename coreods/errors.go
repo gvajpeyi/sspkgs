@@ -2,7 +2,6 @@ package coreods
 
 import "strings"
 
-
 const (
 	// ErrNotFound is returned when a resource cannot be found
 	// in the database.
@@ -59,5 +58,3 @@ type privateError string
 func (e privateError) Error() string {
 	return string(e)
 }
-
-

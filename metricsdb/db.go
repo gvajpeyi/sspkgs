@@ -1,4 +1,5 @@
 package metricsdb
+
 //
 // import (
 // 	"fmt"
@@ -20,7 +21,7 @@ package metricsdb
 //
 // 	mdb.CS = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s", mdb.User, mdb.Password, mdb.Host, mdb.Port, mdb.Name)
 //
-// 	fmt.Println("mdb.ConnectionString: ", mdb.CS)
+//
 //
 // 	db, err := gorm.Open("mysql", mdb.CS)
 // 	if err != nil {

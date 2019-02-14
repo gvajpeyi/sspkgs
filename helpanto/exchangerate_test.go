@@ -1,4 +1,5 @@
 package helpanto
+
 //
 // import (
 // 	"encoding/json"
@@ -68,8 +69,8 @@ package helpanto
 // 		t.Log("Failed: ", err.Error())
 //
 // 	}
-// 	fmt.Println(" ")
-// 	fmt.Println("Final:  ", *usd)
+//
+//
 // }
 // //
 // // type EbiDatabase struct {
