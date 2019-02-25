@@ -105,7 +105,7 @@ func (id *identityClient) VerifyToken(token string) (bool, *Response, error) {
 		"token": token,
 	}).Info("")
 
-	qUrl := fmt.Sprintf("%s/%s/%s", id.baseURL, "tokens", token)
+	qUrl := fmt.Sprintf("%s/%s", id.baseURL,  token)
 
 	req, err := http.NewRequest("GET", qUrl, nil)
 	req.Header.Set("X-Auth-Token", token)
