@@ -112,7 +112,7 @@ func (id *identityClient) VerifyToken(token string) (bool, *Response, error) {
 
 	resp, err := id.client.Do(req)
 	if err != nil {
-		return false, &Response{}, err
+		return false, &Response{}, fmt.Errorf(fmt.Sprintf("error: %v    Response Body: %+v", err, resp))
 	}
 
 	body, err := ioutil.ReadAll(resp.Body)
@@ -120,7 +120,7 @@ func (id *identityClient) VerifyToken(token string) (bool, *Response, error) {
 	idResponse := Response{}
 	err = json.Unmarshal(body, &idResponse)
 	if err != nil {
-		return false, &Response{}, err
+		return false, &Response{}, fmt.Errorf(fmt.Sprintf("error: %v    Response Body: %+v", err, resp))
 	}
 
 	if resp.StatusCode == 200 {

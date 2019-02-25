@@ -3,6 +3,7 @@
  import (
 	 "crypto/tls"
 	 "fmt"
+	 "github.com/sirupsen/logrus"
 	 "net/http"
 	 "os"
 	 "testing"
@@ -24,13 +25,24 @@ func setupTests() (IdentityService, error) {
 		}
 		
 		
+	var logger = logrus.New()
 
+	logger.Out = os.Stdout
+
+	logger.Formatter = new(logrus.TextFormatter) //default
+	logger.SetOutput(logger.Writer())
+
+	ll := logrus.DebugLevel
+
+	logger.SetLevel(ll)
+
+	logger.Out = os.Stdout
 		
 	if ssid == "" || sspw == "" {
 		return nil, fmt.Errorf("identity env variables not configured")
 	}
 	
-	id := NewIdentityService(client, "https://identity-internal.api.rackspacecloud.com/v2.0")
+	id := NewIdentityService(client, "https://identity-internal.api.rackspacecloud.com/v2.0", logger)
 
 
 
@@ -119,11 +131,10 @@ func TestVerifyToken(t *testing.T){
 		}
 		for _, tc := range testCases {
 
-			got, resp, err := idsrv.VerifyToken(tc.arg)
+			got, _, err := idsrv.VerifyToken(tc.arg)
 			if err != nil || got != tc.want {
 				t.Errorf("Want: %t  %T Got: %T  %t\n", tc.want, tc.want, got, got)
 			}
-			t.Log("Token valid: ", resp.Access.Token.ID)
 		}
 
 	}
