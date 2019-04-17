@@ -64,7 +64,8 @@ func TestAuthenticate(t *testing.T) {
 		token string
 		want  bool
 	}{
-		{user: os.Getenv("SSID"), pass: os.Getenv("SSPW"),token: "AAAbVMKVFzPgneC5Yy4p3IAicxDNx__nq9e7snYeLRQavGiryAICCjJDBH9b_d3bsw0povu88c5YCaIf9KzhM7fW3qABttiONaqBaAOjccBPVDkBjMSlU8AK", want: true},
+		{user: os.Getenv("SSID"), pass: os.Getenv("SSPW"),token: "AACxXHysF_-vzSZOiLNF29iS8F9TiPY3TR0Kc5_yLKfmEBQRS7brhycICEZw_oNWuVnpvvLod32xkAU4ciiUMII-w0r98H5eH3t0idRoW7PTq4VjeU5_ZknV", want: true},
+		{user: "min", pass: "min",token: "AACxXHysF_-vzSZeU5_ZknV", want: true},
 	//	{user: "SSID",pass: "SSPW", token: "", want: false},
 
 	}
