@@ -9,11 +9,9 @@ import (
 	"net/http"
 	"strings"
 	"time"
-	
+
 	log "github.com/sirupsen/logrus"
 )
-
-
 
 type CreditRequests struct {
 	Links struct {
@@ -159,7 +157,6 @@ type ACTClient interface {
 	GetDepartments(filter *string) (map[int]string, error)
 	GetCreditRequests(pageLink *string, queryParams *string) (*CreditRequests, error)
 	GetRequest(query string) (*[]byte, error)
-
 }
 
 type ACTService interface {
@@ -216,9 +213,9 @@ func (ac *actClient) GetRequest(query string) (*[]byte, error) {
 	var resp *http.Response
 
 	ac.logger.Info("get req query: ", query)
-	
+
 	reqURL := fmt.Sprintf("%s%s", ac.baseURL, query)
-		ac.logger.Info("reqURL: ", reqURL)
+	ac.logger.Info("reqURL: ", reqURL)
 
 	request, err := http.NewRequest("GET", reqURL, nil)
 
@@ -311,7 +308,7 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 		return nil, err
 	}
 
-	log.Infof("body: %s",body)
+	log.Infof("body: %s", body)
 	for _, cr := range creditRequests.Requests {
 		//2018-04-09 14:46:49.748 +0000 UTC
 		//2006-01-02T15:04:05Z07:00
@@ -348,10 +345,6 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 	}
 	return &creditRequests, nil
 }
-
-
-
-
 
 func getIDForDC(deptMap map[int]string, n string) (int, error) {
 
