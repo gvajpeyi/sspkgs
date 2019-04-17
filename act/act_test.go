@@ -1,114 +1,129 @@
-package uptime
+package act
 
 import (
-	"flag"
-	"fmt"
-	"github.rackspace.com/SegmentSupport/metrics-dashboard/config"
+	"crypto/tls"
+	"github.com/sirupsen/logrus"
 	"github.rackspace.com/SegmentSupport/sspkgs/coreods"
 	"github.rackspace.com/SegmentSupport/sspkgs/identity"
 	"log"
+	"net/http"
 	"os"
+	"strconv"
 	"testing"
 )
 
 var boolPtr *bool
-var cfg *config.Config
 
-func actServiceSetup() (*Services, error) {
+func actServiceSetup() (*actClient, error) {
 
-	if boolPtr == nil || cfg == nil {
-		boolPtr = flag.Bool("prod", false, "Provide this flag in production. This ensures that a .config file is provided before the application starts.")
-		flag.Parse()
-		tempCfg := config.LoadConfig(*boolPtr)
-		cfg = &tempCfg
+	var actURL = "https://act-api.gscs.rackspace.com/v1/"
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	client := &http.Client{
+
+		Transport: tr,
 	}
 
-	odsCfg := config.LoadDBConfig(os.Getenv("ODSID"), os.Getenv("ODSPW"), os.Getenv("ODSHOST"), os.Getenv("ODSPORT"),  os.Getenv("ODSDB"))
+	odsUsername := os.Getenv("ODSID")
+	odsPassword := os.Getenv("ODSPW")
+	odsHost := os.Getenv("ODSHOST")
+	odsPort, nil := strconv.Atoi(os.Getenv("ODSPORT"))
 
-	fmt.Println("ODSDB Host:  ", odsCfg.Host)
-	fmt.Println("ODSDB User:  ", odsCfg.User)
-	fmt.Println("ODSDB Pass:  ", odsCfg.Password)
-	fmt.Println("ODSDB DBName:  ", odsCfg.DBName)
-	fmt.Println("ODSDB Port:  ", odsCfg.Port)
+	var logger = logrus.New()
 
-	ods, err := coreods.NewODSService(odsCfg)
+	logger.Out = os.Stdout
+
+	logger.Formatter = new(logrus.TextFormatter) //default
+	logger.SetOutput(logger.Writer())
+	//logger.SetReportCaller(true)
+
+	loglevel := os.Getenv("LOGLEVEL")
+	ll := logger.Level
+	switch loglevel {
+	case "debug":
+		ll = logrus.DebugLevel
+	case "info":
+		ll = logrus.InfoLevel
+	case "error":
+		ll = logrus.ErrorLevel
+	case "fatal":
+		ll = logrus.FatalLevel
+	default:
+		ll = logrus.WarnLevel
+	}
+
+	logger.SetLevel(ll)
+
+	logger.Out = os.Stdout
+
+	odsConfig := coreods.ODSConfig{
+		Host:     odsHost,
+		Port:     odsPort,
+		User:     odsUsername,
+		Password: odsPassword,
+		DBName:   "",
+	}
+	ods, err := coreods.NewODSService(odsConfig)
 	if err != nil {
 		log.Fatalf("unable to setup service: %v", err)
 	}
 
-	cfg.ACTUser = os.Getenv("SSID")
-	cfg.ACTPass = os.Getenv("SSPW")
+	ssUser := os.Getenv("SSID")
+	ssPass := os.Getenv("SSPW")
 
-	id := identity.NewIdentityService(cfg.HttpClient, cfg.IdentityURL, cfg.Logger)
+	id := identity.NewIdentityService(client, "https://identity-internal.api.rackspacecloud.com/v2.0", logger)
+	tempToken, err := id.AuthenticateWithPass(ssUser, ssPass, "Rackspace")
 
-	services, err := NewServices(
+	internalToken := &tempToken.Access.Token.ID
+	act := &actClient{client, actURL, ssUser, ssPass, "Rackspace", ods, id, logger, internalToken}
 
-		WithACT(cfg.ACTUrl, cfg.ACTUser, cfg.ACTPass, cfg.ACTDomain, ods, id, cfg.Logger),
-	)
-
-	if err != nil {
-		return nil, err
-	}
-
-	return services, err
+	return act, err
 
 }
 
 func TestResponsibleDepartments(t *testing.T) {
-	s, err := actServiceSetup()
+	act, err := actServiceSetup()
 	if err != nil {
 		t.Fatal("Unable to setup service: ", err.Error())
 	}
 	filter := "DCOPS"
-	_, err = s.ACT.GetDepartments(&filter)
+	d, err := act.GetDepartments(&filter)
 	if err != nil {
 		t.Errorf("Error: %s", err.Error())
 	}
+	t.Logf("%+v", d)
 
 }
 
 func TestCreditRequests(t *testing.T) {
-	s, err := actServiceSetup()
+	act, err := actServiceSetup()
 	if err != nil {
 		t.Fatal("Unable to setup service: ", err.Error())
 	}
 	var pageLink *string = nil
-	var qp = "?responsibleDepartmentId=35&status=closed&workflowState=completed"
+	var qp = "requests?responsibleDepartmentId=120&status=closed&workflowState=completed"
 	queryParams := &qp
 
 Loop:
 	for {
-		resp, err := s.ACT.GetCreditRequests(pageLink, queryParams)
+		resp, err := act.GetCreditRequests(queryParams, queryParams)
 		if err != nil {
 			t.Fatal("failed on get credit requests: ", err.Error())
 		}
 
 		pageLink = &resp.Links.Next.Href
-
+		t.Log("page link", *pageLink)
 		if *pageLink == "" {
 			break Loop
 		}
-
+		t.Logf("%+v", resp.Requests)
 	}
-
-}
-
-func TestCurrentMonthSums(t *testing.T) {
-	s, err := actServiceSetup()
-	if err != nil {
-		t.Fatal("Unable to setup service: ", err.Error())
-	}
-	cms, err := s.ACT.OverviewSums("DFW")
-
-	if err != nil {
-		t.Errorf("Want: something   Got: something else: %s", err.Error())
-	}
-	t.Logf("cms:\n%+v\n", cms)
 
 }
 
 func TestGetIDForDC(t *testing.T) {
-	s, err := actServiceSetup()
+	act, err := actServiceSetup()
 	if err != nil {
 		t.Fatal("Unable to setup service: ", err.Error())
 	}
@@ -134,7 +149,7 @@ func TestGetIDForDC(t *testing.T) {
 	*/
 
 	filter := "DCOPS"
-	deptMap, err := s.ACT.GetDepartments(&filter)
+	deptMap, err := act.GetDepartments(&filter)
 
 	dc := "ORD"
 	cms, err := getIDForDC(deptMap, dc)
