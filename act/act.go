@@ -85,6 +85,7 @@ type CreditRequest struct {
 	CreatedDatetime time.Time `json:"createdDatetime"`
 	UpdatedDatetime time.Time `json:"updatedDatetime"`
 	ClosedDate      string    `json:"closedDate"`
+	TotalAmount     float64   `json:"total_amount"`
 	LastApprovedBy  struct {
 		Sso         string `json:"sso"`
 		DisplayName string `json:"displayName"`
@@ -324,6 +325,13 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 			"closed Month":  int(closedMonth),
 			"closed Year":   closedYear,
 		}).Infoln("Prior to calling for exchange rate")
+
+		if cr.Request.AdditionalAmount >= 0 {
+			cr.Request.TotalAmount = cr.Request.AdditionalAmount + cr.Request.Amount
+		} else {
+			cr.Request.TotalAmount = cr.Request.Amount
+		}
+
 		if cr.Request.Currency.Code != "USD" {
 			reqAmount, err := ac.coreodsService.ExchangeRate(cr.Request.Currency.Code, int(closedMonth), closedYear)
 			if err != nil {
