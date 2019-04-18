@@ -326,13 +326,7 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 			"closed Year":   closedYear,
 		}).Infoln("Prior to calling for exchange rate")
 
-		if cr.Request.AdditionalAmount >= 0.0 {
-			fmt.Printf("additional >=0.0:  %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
-			cr.Request.TotalAmount = cr.Request.AdditionalAmount + cr.Request.Amount
-		} else {
-			fmt.Printf("additional < 0.0:   %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
-			cr.Request.TotalAmount = cr.Request.Amount
-		}
+
 
 		if cr.Request.Currency.Code != "USD" {
 			reqAmount, err := ac.coreodsService.ExchangeRate(cr.Request.Currency.Code, int(closedMonth), closedYear)
@@ -348,9 +342,20 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 			}
 			currCode := "USD"
 			cr.Request.Amount = reqAmount * cr.Request.Amount
+			cr.Request.AdditionalAmount = reqAmount * cr.Request.AdditionalAmount
 
 			cr.Request.Currency.Code = currCode
 		}
+		
+				if cr.Request.AdditionalAmount >= 0.0 {
+			fmt.Printf("additional >=0.0:  %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
+			cr.Request.TotalAmount = cr.Request.AdditionalAmount + cr.Request.Amount
+		} else {
+			fmt.Printf("additional < 0.0:   %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
+			cr.Request.TotalAmount = cr.Request.Amount
+		}
+		
+		
 
 	}
 	return &creditRequests, nil
