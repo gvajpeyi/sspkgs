@@ -326,11 +326,11 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 			"closed Year":   closedYear,
 		}).Infoln("Prior to calling for exchange rate")
 
-		if cr.Request.AdditionalAmount >= 0 {
-			fmt.Printf("additional >=0:  v + %v = %v", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
+		if cr.Request.AdditionalAmount >= 0.0 {
+			fmt.Printf("additional >=0.0:  %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
 			cr.Request.TotalAmount = cr.Request.AdditionalAmount + cr.Request.Amount
 		} else {
-			fmt.Printf("additional < 0:   v + %v = %v", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
+			fmt.Printf("additional < 0.0:   %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
 			cr.Request.TotalAmount = cr.Request.Amount
 		}
 
