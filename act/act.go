@@ -308,7 +308,7 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 		return nil, err
 	}
 
-	log.Infof("body: %s", body)
+	//log.Infof("body: %s", body)
 	for _, cr := range creditRequests.Requests {
 		//2018-04-09 14:46:49.748 +0000 UTC
 		//2006-01-02T15:04:05Z07:00
