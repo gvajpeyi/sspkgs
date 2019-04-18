@@ -347,13 +347,9 @@ func (ac *actClient) GetCreditRequests(pageLink *string, queryParams *string) (*
 			cr.Request.Currency.Code = currCode
 		}
 		
-				if cr.Request.AdditionalAmount >= 0.0 {
-			fmt.Printf("additional >=0.0:  %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
-			cr.Request.TotalAmount = cr.Request.AdditionalAmount + cr.Request.Amount
-		} else {
-			fmt.Printf("additional < 0.0:   %v + %v = %v\n", cr.Request.Amount, cr.Request.AdditionalAmount, cr.Request.Amount+cr.Request.AdditionalAmount)
-			cr.Request.TotalAmount = cr.Request.Amount
-		}
+		cr.Request.TotalAmount = float64(cr.Request.Amount) + float64(cr.Request.AdditionalAmount)
+		
+		
 		
 		
 
