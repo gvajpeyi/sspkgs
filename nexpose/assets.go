@@ -11,7 +11,7 @@ import (
 type AssetVulnerabilities struct {
 	Links     []Links     `json:"links"`
 	Page      Page        `json:"page"`
-	AVResources []Resources `json:"resources"`
+	Resources []AVResources `json:"resources"`
 }
 
 type AVResults struct {
@@ -41,7 +41,7 @@ func (c *client) SiteAssets(siteID int32) (*SiteAssets, error) {
 		"func": "nexpose.Sites()",
 	}).Debug("Calling nexpose to get all site info.")
 	
-	path:=fmt.Sprintf("/api/3/sites/%d/assets", siteID)
+	path:=fmt.Sprintf("/sites/%d/assets", siteID)
 	url := fmt.Sprintf("%s%s", c.baseURL, path)
 	body, err := makeGetRequest(c, url)
 	if err != nil{
@@ -62,7 +62,7 @@ func (c *client) SiteAssets(siteID int32) (*SiteAssets, error) {
 
 func (c *client) AssetVulnerabilities(assetID int64)(*AssetVulnerabilities, error){
 	
-	path:=fmt.Sprintf("/api/3/assets/%d/vulnerabilities", assetID)
+	path:=fmt.Sprintf("/assets/%d/vulnerabilities", assetID)
 	url := fmt.Sprintf("%s%s", c.baseURL, path)
 	
 	body, err := makeGetRequest(c, url)
