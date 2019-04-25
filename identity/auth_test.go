@@ -27,16 +27,12 @@ func setupTests() (IdentityService, error) {
 		
 		
 	var logger = logrus.New()
-
 	logger.Out = os.Stdout
-
 	logger.Formatter = new(logrus.TextFormatter) //default
 	logger.SetOutput(logger.Writer())
 
 	ll := logrus.DebugLevel
-
 	logger.SetLevel(ll)
-
 	logger.Out = os.Stdout
 		
 	if ssid == "" || sspw == "" {
