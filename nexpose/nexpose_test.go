@@ -28,7 +28,7 @@ func getHttpClient() *http.Client {
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 	client := &http.Client{
-	Timeout: 10 * time.Second,
+		Timeout:   10 * time.Second,
 		Transport: tr,
 	}
 
@@ -148,23 +148,18 @@ func TestNewService(t *testing.T) {
 
 }
 
-
 func TestSites(t *testing.T) {
 
 	ssid, sspw, err := getCreds()
 	must(err, t)
-	
-			nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
-			if err != nil{
-				t.Fatal("Failed to get Nexpose Service: ", err.Error())
-			}
-			
-			
-			
+
+	nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
+	if err != nil {
+		t.Fatal("Failed to get Nexpose Service: ", err.Error())
+	}
 
 	testCases := []struct {
-		
-		want       string
+		want string
 	}{
 		{
 			"*nexpose.Sites",
@@ -180,7 +175,7 @@ func TestSites(t *testing.T) {
 			if tc.want == "<nil>" {
 				t.Logf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			} else {
-				
+
 				t.Errorf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			}
 			continue
@@ -197,23 +192,19 @@ func TestSites(t *testing.T) {
 
 }
 
-
 func TestSite(t *testing.T) {
 
 	ssid, sspw, err := getCreds()
 	must(err, t)
-	
-			nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
-			if err != nil{
-				t.Fatal("Failed to get Nexpose Service: ", err.Error())
-			}
-			
-			
-			
+
+	nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
+	if err != nil {
+		t.Fatal("Failed to get Nexpose Service: ", err.Error())
+	}
 
 	testCases := []struct {
-		siteID  int32
-		want       string
+		siteID int32
+		want   string
 	}{
 		{
 			884,
@@ -230,7 +221,7 @@ func TestSite(t *testing.T) {
 			if tc.want == "<nil>" {
 				t.Logf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			} else {
-				
+
 				t.Errorf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			}
 			continue
@@ -247,23 +238,19 @@ func TestSite(t *testing.T) {
 
 }
 
-
 func TestSiteAssets(t *testing.T) {
 
 	ssid, sspw, err := getCreds()
 	must(err, t)
-	
-			nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
-			if err != nil{
-				t.Fatal("Failed to get Nexpose Service: ", err.Error())
-			}
-			
-			
-			
+
+	nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
+	if err != nil {
+		t.Fatal("Failed to get Nexpose Service: ", err.Error())
+	}
 
 	testCases := []struct {
-		siteID  int32
-		want       string
+		siteID int32
+		want   string
 	}{
 		{
 			884,
@@ -280,7 +267,7 @@ func TestSiteAssets(t *testing.T) {
 			if tc.want == "<nil>" {
 				t.Logf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			} else {
-				
+
 				t.Errorf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			}
 			continue
@@ -297,23 +284,19 @@ func TestSiteAssets(t *testing.T) {
 
 }
 
-
 func TestAssetVulnerabilities(t *testing.T) {
 
 	ssid, sspw, err := getCreds()
 	must(err, t)
-	
-			nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
-			if err != nil{
-				t.Fatal("Failed to get Nexpose Service: ", err.Error())
-			}
-			
-			
-			
+
+	nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
+	if err != nil {
+		t.Fatal("Failed to get Nexpose Service: ", err.Error())
+	}
 
 	testCases := []struct {
-		assetID  int64
-		want       string
+		assetID int64
+		want    string
 	}{
 		{
 			3576,
@@ -330,7 +313,7 @@ func TestAssetVulnerabilities(t *testing.T) {
 			if tc.want == "<nil>" {
 				t.Logf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			} else {
-				
+
 				t.Errorf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			}
 			continue
@@ -351,20 +334,17 @@ func TestVulnerabilityExceptions(t *testing.T) {
 
 	ssid, sspw, err := getCreds()
 	must(err, t)
-	
-			nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
-			if err != nil{
-				t.Fatal("Failed to get Nexpose Service: ", err.Error())
-			}
-			
-			
-			
+
+	nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
+	if err != nil {
+		t.Fatal("Failed to get Nexpose Service: ", err.Error())
+	}
 
 	testCases := []struct {
-		want       string
+		want string
 	}{
 		{
-			
+
 			"*nexpose.VulnExceptions",
 		},
 	}
@@ -378,7 +358,7 @@ func TestVulnerabilityExceptions(t *testing.T) {
 			if tc.want == "<nil>" {
 				t.Logf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			} else {
-				
+
 				t.Errorf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			}
 			continue
@@ -395,23 +375,19 @@ func TestVulnerabilityExceptions(t *testing.T) {
 
 }
 
-
-func TestVulnerabilityException (t *testing.T) {
+func TestVulnerabilityException(t *testing.T) {
 
 	ssid, sspw, err := getCreds()
 	must(err, t)
-	
-			nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
-			if err != nil{
-				t.Fatal("Failed to get Nexpose Service: ", err.Error())
-			}
-			
-			
-			
+
+	nexpose, err := NewService(getHttpClient(), getBaseURL(), ssid, sspw, getLogger(logrus.DebugLevel))
+	if err != nil {
+		t.Fatal("Failed to get Nexpose Service: ", err.Error())
+	}
 
 	testCases := []struct {
 		excepID int
-		want       string
+		want    string
 	}{
 		{
 			280250,
@@ -428,7 +404,7 @@ func TestVulnerabilityException (t *testing.T) {
 			if tc.want == "<nil>" {
 				t.Logf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			} else {
-				
+
 				t.Errorf("want:  %s   got:  %v:  Error:  %s", tc.want, nil, err.Error())
 			}
 			continue
@@ -444,7 +420,6 @@ func TestVulnerabilityException (t *testing.T) {
 	}
 
 }
-
 
 func must(err error, t *testing.T) {
 	if err != nil {

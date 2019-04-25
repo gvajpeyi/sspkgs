@@ -3,15 +3,16 @@ package nexpose
 import (
 	"encoding/json"
 	"fmt"
-		log "github.com/sirupsen/logrus"
+	log "github.com/sirupsen/logrus"
 	"time"
-	
+
 	"io/ioutil"
 	"net/http"
 )
+
 type Sites struct {
-	Links   []Links `json:"links"`
-	Page       `json:"page"`
+	Links     []Links `json:"links"`
+	Page      `json:"page"`
 	Resources []Resources `json:"resources"`
 }
 
@@ -28,20 +29,18 @@ type Page struct {
 }
 
 type Resources struct {
-	Assets          int     `json:"assets"`
-	ID              int     `json:"id"`
-	Importance      string  `json:"importance"`
-	LastScanTime    string  `json:"lastScanTime"`
-	Links          []Links `json:"links"`
-	Name            string  `json:"name"`
-	RiskScore       float64     `json:"riskScore"`
-	ScanEngine      int     `json:"scanEngine"`
-	ScanTemplate    string  `json:"scanTemplate"`
-	Type            string  `json:"type"`
+	Assets          int             `json:"assets"`
+	ID              int             `json:"id"`
+	Importance      string          `json:"importance"`
+	LastScanTime    string          `json:"lastScanTime"`
+	Links           []Links         `json:"links"`
+	Name            string          `json:"name"`
+	RiskScore       float64         `json:"riskScore"`
+	ScanEngine      int             `json:"scanEngine"`
+	ScanTemplate    string          `json:"scanTemplate"`
+	Type            string          `json:"type"`
 	Vulnerabilities Vulnerabilities `json:"vulnerabilities"`
 }
-
-
 
 type Vulnerabilities struct {
 	Critical int `json:"critical"`
@@ -50,28 +49,25 @@ type Vulnerabilities struct {
 	Total    int `json:"total"`
 }
 
-
 type Site struct {
-	Assets          int     `json:"assets"`
-	ConnectionType  string  `json:"connectionType"`
-	Description     string  `json:"description"`
-	ID              int32  `json:"id"`
-	Importance      string  `json:"importance"`
-	LastScanTime    string  `json:"lastScanTime"`
-	Links            []Links `json:"links"`
-	Name            string  `json:"name"`
-	RiskScore       float64 `json:"riskScore"`
-	ScanEngine      int32  `json:"scanEngine"`
-	ScanTemplate    string  `json:"scanTemplate"`
-	Type            string  `json:"type"`
+	Assets          int             `json:"assets"`
+	ConnectionType  string          `json:"connectionType"`
+	Description     string          `json:"description"`
+	ID              int32           `json:"id"`
+	Importance      string          `json:"importance"`
+	LastScanTime    string          `json:"lastScanTime"`
+	Links           []Links         `json:"links"`
+	Name            string          `json:"name"`
+	RiskScore       float64         `json:"riskScore"`
+	ScanEngine      int32           `json:"scanEngine"`
+	ScanTemplate    string          `json:"scanTemplate"`
+	Type            string          `json:"type"`
 	Vulnerabilities Vulnerabilities `json:"vulnerabilities"`
 }
 
-
-
 type SiteAssets struct {
-	Links     []Links     `json:"links"`
-	Page      Page        `json:"page"`
+	Links     []Links              `json:"links"`
+	Page      Page                 `json:"page"`
 	Resources []SiteAssetResources `json:"resources"`
 }
 
@@ -217,40 +213,39 @@ type SiteAssetResources struct {
 	Vulnerabilities            Vulnerabilities  `json:"vulnerabilities"`
 }
 
-func makeGetRequest(c *client, url string)([]byte, error){
-	
+func makeGetRequest(c *client, url string) ([]byte, error) {
+
 	req, err := http.NewRequest("GET", url, nil)
 	req.SetBasicAuth(c.user, c.pass)
 	resp, err := c.httpClient.Do(req)
 	log.Debug("Response Status: ", resp.StatusCode, resp.Status)
-	
-	if err != nil  || resp.StatusCode != http.StatusOK {
+
+	if err != nil || resp.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf(fmt.Sprintf("error: %v    Request: %+v   Response Body: %+v", err, req, resp))
 	}
-	
+
 	body, err := ioutil.ReadAll(resp.Body)
 
 	return body, nil
-	
-	
+
 }
 
 // Sites will  return details for all sites to which the account has privileges
 func (c *client) Sites() (*Sites, error) {
-		c.logger.WithFields(log.Fields{
+	c.logger.WithFields(log.Fields{
 		"func": "nexpose.Sites()",
 	}).Debug("Calling nexpose to get all site info.")
-	
+
 	url := fmt.Sprintf("%s/sites", c.baseURL)
 
 	body, err := makeGetRequest(c, url)
-	if err != nil{
+	if err != nil {
 		return nil, err
 	}
-	
+
 	sites := Sites{}
 	err = json.Unmarshal(body, &sites)
-	if err != nil{
+	if err != nil {
 		return nil, err
 	}
 	return &sites, nil
@@ -259,24 +254,20 @@ func (c *client) Sites() (*Sites, error) {
 // Site will return details for the site that has the ID that is passed in
 func (c *client) Site(siteID int32) (*Site, error) {
 
-		c.logger.WithFields(log.Fields{
+	c.logger.WithFields(log.Fields{
 		"func": "nexpose.Sites()",
 	}).Debug("Calling nexpose to get specific site info.")
-	
+
 	url := fmt.Sprintf("%s/sites/%d", c.baseURL, siteID)
 
 	body, err := makeGetRequest(c, url)
-	if err != nil{
+	if err != nil {
 		return nil, err
 	}
 	site := Site{}
 	err = json.Unmarshal(body, &site)
-	if err != nil{
+	if err != nil {
 		return nil, err
 	}
 	return &site, nil
 }
-
-
-
-

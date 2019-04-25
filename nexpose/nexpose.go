@@ -21,8 +21,8 @@ var _ Client = &client{}
 type client struct {
 	httpClient *http.Client
 	baseURL    string
-	user    string
-	pass    string
+	user       string
+	pass       string
 	logger     *log.Logger
 }
 
@@ -65,4 +65,3 @@ func NewService(httpClient *http.Client, baseURL string, user string, pass strin
 	return &service{Client: c}, nil
 
 }
-
