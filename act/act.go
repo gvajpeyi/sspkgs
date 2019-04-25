@@ -224,7 +224,7 @@ func (ac *actClient) GetRequest(query string) (*[]byte, error) {
 		return nil, err
 
 	}
-
+	
 	request.Header.Add("Content-Type", "application/json")
 	request.Header.Add("X-Auth-Token", *ac.token)
 	resp, err = ac.client.Do(request)

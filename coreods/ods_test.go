@@ -13,6 +13,8 @@ func setupTests() (ODSService, error) {
 	odsPassword := os.Getenv("ODSPW")
 	odsHost := os.Getenv("ODSHOST")
 	odsPortS := os.Getenv("ODSPORT")
+coreProdPassword:
+	os.Getenv("CoreProdPassword")
 	//comment
 	odsPort, err := strconv.Atoi(odsPortS)
 	if err != nil {
@@ -23,15 +25,15 @@ func setupTests() (ODSService, error) {
 		return nil, fmt.Errorf("database env variables not configured")
 	}
 	dbConfig := ODSConfig{
-		Host:     odsHost,
-		Port:     odsPort,
-		User:     odsUsername,
-		Password: odsPassword,
-		DBName:   "Corporate_DMART",
+		Host:             odsHost,
+		Port:             odsPort,
+		User:             odsUsername,
+		Password:         odsPassword,
+		DBName:           "Corporate_DMART",
+		coreProdPassword: coreProdPassword,
 	}
 
 	ods, err := NewODSService(dbConfig)
-
 	return ods, err
 
 }
@@ -45,6 +47,40 @@ func TestDBPing(t *testing.T) {
 	}
 
 	dbs.Ping()
+
+}
+
+func TestOdsDB_DeviceDetails(t *testing.T) {
+	dbs, err := setupTests()
+	if err != nil {
+		t.Fatal(err)
+
+	}
+
+	type TestArgs struct {
+		devInputList string
+	}
+
+	testCases := []struct {
+		T    TestArgs
+		Want int
+	}{
+		{T: TestArgs{devInputList: "700656,939716,939659"}, Want: 3},
+	}
+
+	for _, tc := range testCases {
+		got, err := dbs.DeviceDetails(tc.T.devInputList)
+		t.Log(got)
+		if err != nil || len(*got) != tc.Want {
+			t.Errorf("%s:  Got: %v; Want:  %v", tc.T.devInputList, got, tc.Want)
+			continue
+		}
+		t.Logf("%s:  Got: %v; Want:  %v", tc.T.devInputList, got, tc.Want)
+
+		// if got != tc.Want {
+		// 	t.Errorf("err:%s:  Got: %v; Want:  %v", tc.T.convertFromCurrency, got, tc.Want)
+		// }
+	}
 
 }
 
