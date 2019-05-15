@@ -17,7 +17,6 @@ type ODSConfig struct {
 	User             string `json:"user"`
 	Password         string `json:"password"`
 	CoreProdPassword string `json:"CoreProdPassword,omitempty"`
-
 	DBName string `json:"db_name"`
 }
 
@@ -41,14 +40,16 @@ type ODSDB interface {
 	DataCenterServerCount(start, end time.Time, dc string) (DCServerCount, error)
 	ExchangeRate(convertFromCurrency string, month int, year int) (float64, error)
 	DeviceDetails(deviceList string) (*[]DeviceDetail, error)
+	LoadAllDevicesAndAccountNums() (*[]DevAcct, error)
 }
 
 func NewODSService(config ODSConfig) (ODSService, error) {
 
-	connStr := fmt.Sprintf("odbc:server=%s; port=%d; user id=%s;password=%s; database=%s;log=3;encrypt=false;TrustServerCertificate=true", config.Host, config.Port, config.User, config.Password, config.DBName)
+connStr := fmt.Sprintf("odbc:server=%s; port=%d; user id=%s;password=%s; database=%s;log=3;encrypt=false;TrustServerCertificate=true", config.Host, config.Port, config.User, config.Password, config.DBName)
 
+	fmt.Println(connStr)
 	db, err := sqlx.Open("mssql", connStr)
-
+	
 	if err != nil {
 
 		return nil, err

@@ -7,13 +7,45 @@ import (
 	"testing"
 	"time"
 )
-
-func setupTests() (ODSService, error) {
+func setupODSTests() (ODSService, error) {
 	odsUsername := os.Getenv("ODSID")
 	odsPassword := os.Getenv("ODSPW")
 	odsHost := os.Getenv("ODSHOST")
 	odsPortS := os.Getenv("ODSPORT")
-coreProdPassword:
+	os.Getenv("CoreProdPassword")
+	//comment
+	
+	odsPort, err := strconv.Atoi(odsPortS)
+	if err != nil {
+		return nil, err
+	}
+
+	fmt.Println("ODSPW: ", odsPassword)
+	
+	if odsUsername == "" || odsPassword == "" || odsPortS == "" {
+		return nil, fmt.Errorf("database env variables not configured")
+	}
+	dbConfig := ODSConfig{
+		Host:             odsHost,
+		Port:             odsPort,
+		User:             odsUsername,
+		Password:         odsPassword,
+		DBName:           "Operational_reporting_CORE",
+
+	}
+
+	ods, err := NewODSService(dbConfig)
+	return ods, err
+
+}
+
+
+
+func setupDmartTests() (ODSService, error) {
+	odsUsername := os.Getenv("ODSID")
+	odsPassword := os.Getenv("DMPW")
+	odsHost := os.Getenv("DMHOST")
+	odsPortS := os.Getenv("ODSPORT")
 	os.Getenv("CoreProdPassword")
 	//comment
 	odsPort, err := strconv.Atoi(odsPortS)
@@ -30,7 +62,7 @@ coreProdPassword:
 		User:             odsUsername,
 		Password:         odsPassword,
 		DBName:           "Corporate_DMART",
-		coreProdPassword: coreProdPassword,
+
 	}
 
 	ods, err := NewODSService(dbConfig)
@@ -40,7 +72,7 @@ coreProdPassword:
 
 func TestDBPing(t *testing.T) {
 
-	dbs, err := setupTests()
+	dbs, err := setupDmartTests()
 	if err != nil {
 		t.Fatal(err)
 
@@ -51,8 +83,9 @@ func TestDBPing(t *testing.T) {
 }
 
 func TestOdsDB_DeviceDetails(t *testing.T) {
-	dbs, err := setupTests()
+	dbs, err := setupODSTests()
 	if err != nil {
+		
 		t.Fatal(err)
 
 	}
@@ -86,7 +119,7 @@ func TestOdsDB_DeviceDetails(t *testing.T) {
 
 func TestOdsDB_ExchangeRate(t *testing.T) {
 
-	dbs, err := setupTests()
+	dbs, err := setupDmartTests()
 	if err != nil {
 		t.Fatal(err)
 
@@ -127,7 +160,7 @@ func TestOdsDB_ExchangeRate(t *testing.T) {
 
 func TestOdsDB_DeviceCount(t *testing.T) {
 
-	dbs, err := setupTests()
+	dbs, err := setupDmartTests()
 	if err != nil {
 		t.Fatal(err)
 
