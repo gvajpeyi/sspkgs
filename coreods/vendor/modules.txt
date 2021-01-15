@@ -1,0 +1,12 @@
+# cloud.google.com/go v0.36.0
+cloud.google.com/go/civil
+# github.com/DATA-DOG/go-sqlmock v1.4.0
+github.com/DATA-DOG/go-sqlmock
+# github.com/denisenkom/go-mssqldb v0.0.0-20190204142019-df6d76eb9289
+github.com/denisenkom/go-mssqldb
+github.com/denisenkom/go-mssqldb/internal/cp
+# github.com/jmoiron/sqlx v1.2.0
+github.com/jmoiron/sqlx
+github.com/jmoiron/sqlx/reflectx
+# golang.org/x/crypto v0.0.0-20190211182817-74369b46fc67
+golang.org/x/crypto/md4

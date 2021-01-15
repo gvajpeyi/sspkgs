@@ -1,11 +1,13 @@
 package coreods
 
 import (
+	// blank import used for db as needed
 	_ "database/sql"
 	"fmt"
 	"time"
 )
 
+// DCServerCount contains the server abbreviation and the number of devices in that datacenter.
 type DCServerCount struct {
 	DcName      string `db:"dc_name"`
 	ServerCount int    `db:"server_count"`
@@ -13,6 +15,7 @@ type DCServerCount struct {
 
 //error, scanning:  missing destination name device_datacenter_abbr in *coreods.DCServerCount
 
+// DataCenterServerCount returns the numver of devices during the given time period for the specified data center.
 func (ods *odsDB) DataCenterServerCount(start, end time.Time, dc string) (DCServerCount, error) {
 
 	sc := DCServerCount{}
